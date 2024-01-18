@@ -2,7 +2,7 @@
 
     require_once "config/config.php";
 
-    class Conexion extends PDO{
+    class conexion extends PDO{
 
         private $conex ;
 
@@ -12,7 +12,7 @@
 
             try {
 
-                $this->conex = new PDO($conexstring, _DB_USER_, _DB_PASS_);
+            $this->conex = new PDO($conexstring,USER,PASS);
                $this->conex->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         
             }

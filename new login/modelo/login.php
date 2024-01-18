@@ -1,4 +1,6 @@
 <?php
+
+require_once "conexion.php";
 class persona extends conexion{
     private $nombre;
     private $email;
@@ -10,9 +12,8 @@ class persona extends conexion{
 
     function __construct(){
 
-        $conexion = new Conexion();
-        $conexion->conectar();
-        $this->conex=$conexion->getConexion();
+        $conexion = new conexion();
+        $this->conex=$conexion->getconex();
     }
 
     public function getNombre() {
@@ -49,5 +50,14 @@ class persona extends conexion{
     public function setPassword($password) {
         $this->password = $password;
     }
+
+    public function Validar(){
+        $sql = "SELECT * FROM usuarios WHERE usuario = ? and clave = ?";
+        $valido=$this->conex->prepare($sql);
+        $valido->execute([$this->usuario,$this->password]);
+        return $valido->fetch();
+     }
+
+
 }
                         ?>
