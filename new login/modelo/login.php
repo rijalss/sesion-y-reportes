@@ -52,9 +52,9 @@ class persona extends conexion{
     }
 
     public function Validar(){
-        $sql = "SELECT * FROM usuarios WHERE usuario = ? and clave = ?";
+        $sql = "SELECT * FROM usuarios WHERE nombre = ? and clave = ?";
         $valido=$this->conex->prepare($sql);
-        $valido->execute([$this->usuario,$this->password]);
+        $valido->execute([$this->nombre,$this->password]);
         return $valido->fetch();
      }
 

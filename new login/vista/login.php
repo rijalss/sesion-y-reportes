@@ -12,7 +12,7 @@
 
     <h1>Bienvenido</h1>
     <div class="input-wrapper"> 
-            <input type="text" name="name" placeholder="Nombre">
+            <input type="text" name="nombre" placeholder="Nombre"> 
             <img  class="input-icon" src="name.svg" alt="">
     </div>
     <div class="input-wrapper"> 

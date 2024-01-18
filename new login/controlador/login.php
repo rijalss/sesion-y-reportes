@@ -6,10 +6,10 @@ if(is_file("vista/".$pagina.".php")){
   $user = new persona;
   
   if (isset($_POST["iniciar"])) {
-    $usuario = $_POST["usuario"];
-	$clave = $_POST["contrasena"];
+  $usuario = $_POST["nombre"];
+	$clave = $_POST["password"];
 
-    $user->setUsuario($usuario);
+  $user->setNombre($usuario);
 	$user->setPassword($clave);
 
       if($user->validar()){
@@ -17,6 +17,7 @@ if(is_file("vista/".$pagina.".php")){
       }
       else{
         echo '<script> alert("usuario o contraseña incorrecto");</script>';
+        require_once("vista/".$pagina.".php");
       }
 
 
