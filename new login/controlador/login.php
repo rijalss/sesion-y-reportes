@@ -6,6 +6,8 @@ if(is_file("vista/".$pagina.".php")){
   $user = new persona;
   
   if (isset($_POST["iniciar"])) {
+    if(!empty($_POST["nombre"]) and !empty($_POST["password"])){
+      
   $usuario = $_POST["nombre"];
 	$clave = $_POST["password"];
 
@@ -14,15 +16,22 @@ if(is_file("vista/".$pagina.".php")){
 
       if($user->validar()){
       session_start();
-      $_SESSION["usuario"]=$user->getNombre();
-      $_SESSION["clave"]=$user->getPassword();
+
+      $algo=$user->validar();
+
+      $_SESSION["usuario"]=$algo["nombre"];
+      $_SESSION["clave"]=$algo["clave"];
+      $_SESSION["apellido"]=$algo["apellido"];
+
       $pagina="inicio";
       }
       else{
         echo '<script> alert("usuario o contraseña incorrecto");</script>';
-        require_once("vista/".$pagina.".php");
+        
       }
-
+    }else{
+      echo '<script> alert("Los campos se encuentran vacios");</script>';
+    }
 
   }
 
