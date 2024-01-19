@@ -1,7 +1,7 @@
 <?php
 
 if(is_file("vista/".$pagina.".php")){
-  require_once "modelo/login.php"; // nota:cambiar el login por usuario by Rijals
+  require_once "modelo/login.php"; 
 
   $user = new persona;
   
@@ -22,7 +22,7 @@ if(is_file("vista/".$pagina.".php")){
       $_SESSION["apellido"]=$algo["apellido"];
 
     if($algo["perfil"]==2){
-      $_SESSION["perfil"]="adminisrador";
+      $_SESSION["perfil"]="administrador";
     }else{
       $_SESSION["perfil"]="usuario";
     }
