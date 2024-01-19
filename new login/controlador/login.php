@@ -14,18 +14,23 @@ if(is_file("vista/".$pagina.".php")){
   $user->setNombre($usuario);
 	$user->setPassword($clave);
 
-      if($user->validar()){
+  if($user->validar()){
       session_start();
 
       $algo=$user->validar();
 
       $_SESSION["usuario"]=$algo["nombre"];
-      $_SESSION["clave"]=$algo["clave"];
       $_SESSION["apellido"]=$algo["apellido"];
 
-      $pagina="inicio";
-      }
-      else{
+    if($algo["perfil"]==2){
+      $_SESSION["perfil"]="adminisrador";
+    }else{
+      $_SESSION["perfil"]="usuario";
+    }
+
+    $pagina="inicio";
+    
+  }else{
         echo '<script> alert("usuario o contraseña incorrecto");</script>';
         
       }

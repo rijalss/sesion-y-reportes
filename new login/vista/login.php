@@ -11,6 +11,7 @@
 <form  method="post">
 
     <h1>Bienvenido</h1>
+    <?php ?>
     <div class="input-wrapper"> 
             <input type="text" name="nombre" placeholder="Nombre"> 
             <img  class="input-icon" src="name.svg" alt="">

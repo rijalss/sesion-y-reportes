@@ -1,3 +1,7 @@
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,19 +10,11 @@
     <title>Document</title>
 </head
 <body>
-    <h1>Bienvenido <?php echo $_SESSION["usuario"]." ".$_SESSION["apellido"];?> </h1>
+    <h1>Bienvenido <?php echo $_SESSION["usuario"]." ".$_SESSION["apellido"]." eres un ".$_SESSION["perfil"];?> </h1>
     <div class="containers">
         <div class="navigation">
             <ul>
-                <li>
-                    <a href="#">
-                    <span class="icon">
-                    <ion-icon name="heart-circle-outline"></ion-icon>
-                        </span>
-                        <span class="title">Odontologia</span>
-                    </a>
-                </li>
-
+               
                 <li>
                     <a href="?pagina=inicio">
                         <span class="icon">
@@ -33,9 +29,19 @@
                         <span class="icon">
                         <ion-icon name="person-circle-outline"></ion-icon>
                         </span>
-                        <span class="title">Usuario</span>
+                        <span class="title">Usuarios</span>
                     </a>
                 </li>
+                <?php if($_SESSION["perfil"] == "adminisrador"){?>
+                <li>
+                    <a href="?pagina=usuario">
+                        <span class="icon">
+                        <ion-icon name="person-circle-outline"></ion-icon>
+                        </span>
+                        <span class="title">Administrador</span>
+                    </a>
+                </li>
+                <?php }?>
                 <li>
                     <a href="?pagina=cerrarsesion">
                         <span class="icon">
