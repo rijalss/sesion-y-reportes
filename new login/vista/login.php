@@ -7,7 +7,7 @@
     <title>Inicio de session</title>
 </head>
 <body>
-    
+  <div class="body">  
 <form  method="post">
 
     <h1>Bienvenido</h1>
@@ -20,7 +20,9 @@
             <input type="password" name="password" placeholder="Contraseña">
             <img  class="input-icon" src="images/password.svg" alt="">
      </div>
-     <button class="btn" name="iniciar" value="Enviar">Iniciar session</button>
+     
+     <button class="btn"  name="iniciar" value="Enviar">Iniciar session</button>
 </form>
+</div>
 </body>
 </html>

@@ -16,7 +16,6 @@ if(is_file("vista/".$pagina.".php")){
 
   if($user->validar()){
       session_start();
-
       $algo=$user->validar();
 
       $_SESSION["usuario"]=$algo["nombre"];
@@ -31,11 +30,12 @@ if(is_file("vista/".$pagina.".php")){
     $pagina="inicio";
     
   }else{
-        echo '<script> alert("usuario o contraseña incorrecto");</script>';
+        echo '<div class="error"><h3>Nombre o contraseña incorrecto </h3></div>';
         
       }
     }else{
-      echo '<script> alert("Los campos se encuentran vacios");</script>';
+      echo '<div class="error"><h3>Los campos se encuentran vacios </h3></div>';
+      
     }
 
   }

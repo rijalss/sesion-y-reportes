@@ -8,11 +8,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="css/style2.css">
 </head
 <body>
-    <h1>Bienvenido <?php echo $_SESSION["usuario"]." ".$_SESSION["apellido"]." eres un ".$_SESSION["perfil"];?> </h1>
+ 
     <div class="containers">
+    <div id="caja" ><center><h1>Bienvenido <?php echo $_SESSION["usuario"]." ".$_SESSION["apellido"]." eres un ".$_SESSION["perfil"];?></h1></center></div>
         <div class="navigation">
+        
             <ul>
                
                 <li>
