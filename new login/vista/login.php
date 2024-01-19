@@ -14,7 +14,7 @@
     <?php ?>
     <div class="input-wrapper"> 
             <input type="text" name="nombre" placeholder="Nombre"> 
-            <img  class="input-icon" src="name.svg" alt="">
+            <img  class="input-icon" src="images/name.svg" alt="">
     </div>
     <div class="input-wrapper"> 
             <input type="password" name="password" placeholder="Contraseña">
