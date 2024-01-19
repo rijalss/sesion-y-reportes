@@ -30,7 +30,7 @@ form p{
 }
 
 .input-wrapper{ 
-    position: absolute;
+    position: relative;
     width: 305px;
     margin-bottom: 35px;
 }

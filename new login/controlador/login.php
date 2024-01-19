@@ -13,7 +13,10 @@ if(is_file("vista/".$pagina.".php")){
 	$user->setPassword($clave);
 
       if($user->validar()){
-        $pagina="inicio";
+      session_start();
+      $_SESSION["usuario"]=$user->getNombre();
+      $_SESSION["clave"]=$user->getPassword();
+      $pagina="inicio";
       }
       else{
         echo '<script> alert("usuario o contraseña incorrecto");</script>';
